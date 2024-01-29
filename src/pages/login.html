@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="stylesheet"
+			href="../public/style.css"
+		/>
+		<title>Login</title>
+	</head>
+	<body>
+		<h1>Login</h1>
+		<hr />
+		<div>
+			<p>Enter your credentials to access the administration area</p>
+			<hr />
+			<form id="login-form">
+				<div>
+					<label for="user"
+						>User<input
+							type="text"
+							name="user"
+							id="user"
+							placeholder="username.123"
+					/></label>
+				</div>
+				<div>
+					<label for="password"
+						>Password<input
+							type="password"
+							name="password"
+							id="password"
+							placeholder="*********"
+					/></label>
+				</div>
+				<button type="submit">Login</button>
+			</form>
+			<hr />
+			<p>Do not remember your password? <a href="#">Click here</a></p>
+			<hr />
+			<p>
+				You do not have an account?
+				<a href="./sign-in.html">Sign in</a>
+			</p>
+		</div>
+		<script src="../public/login.js"></script>
+	</body>
+</html>
