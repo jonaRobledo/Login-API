@@ -1,0 +1,6 @@
+POST http://localhost:3000/api/sign-in
+Content-Type: application/json
+
+{
+    "user": "username"
+}

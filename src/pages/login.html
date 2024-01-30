@@ -15,37 +15,47 @@
 	<body>
 		<h1>Login</h1>
 		<hr />
-		<div>
+		<div class="container">
 			<p>Enter your credentials to access the administration area</p>
 			<hr />
 			<form id="login-form">
 				<div>
-					<label for="user"
-						>User<input
-							type="text"
-							name="user"
-							id="user"
-							placeholder="username.123"
-					/></label>
+					<label for="user">User</label
+					><input
+						type="text"
+						name="user"
+						id="user"
+						placeholder="username.123"
+					/>
 				</div>
 				<div>
-					<label for="password"
-						>Password<input
-							type="password"
-							name="password"
-							id="password"
-							placeholder="*********"
-					/></label>
+					<label for="password">Password</label
+					><input
+						type="password"
+						name="password"
+						id="password"
+						placeholder="*********"
+					/>
 				</div>
-				<button type="submit">Login</button>
+				<div class="div-flex">
+					<div>
+						<p>
+							Not remember your password?
+							<a href="#">Click here</a>
+						</p>
+						<p>
+							You do not have an account?
+							<a href="./sign-in.html">Sign in</a>
+						</p>
+					</div>
+					<button
+						class="btn"
+						type="submit"
+					>
+						Login
+					</button>
+				</div>
 			</form>
-			<hr />
-			<p>Do not remember your password? <a href="#">Click here</a></p>
-			<hr />
-			<p>
-				You do not have an account?
-				<a href="./sign-in.html">Sign in</a>
-			</p>
 		</div>
 		<script src="../public/login.js"></script>
 	</body>

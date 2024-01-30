@@ -15,32 +15,42 @@
 	<body>
 		<h1>Sign in</h1>
 		<hr />
-		<div>
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+		<div class="container">
+			<p>Enter your details to create your account.</p>
 			<hr />
-			<form id="login-form">
-				<div>
-					<label for="user"
-						>User<input
-							type="text"
-							name="user"
-							id="user"
-							placeholder="username.123"
-					/></label>
+			<form id="sign-in-form">
+				<label for="user">User</label>
+				<input
+					type="text"
+					name="user"
+					id="user"
+					placeholder="username.123"
+				/>
+
+				<label for="email">User</label>
+				<input
+					type="text"
+					name="email"
+					id="email"
+					placeholder="example@example.com"
+				/>
+				<label for="password">Password</label>
+				<input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="*********"
+				/>
+				<div class="div-flex">
+					<p>You have an account? <a href="./login.html">Login</a></p>
+					<button
+						class="btn"
+						type="submit"
+					>
+						Login
+					</button>
 				</div>
-				<div>
-					<label for="password"
-						>Password<input
-							type="password"
-							name="password"
-							id="password"
-							placeholder="*********"
-					/></label>
-				</div>
-				<button type="submit">Login</button>
 			</form>
-			<hr />
-			<p>You have an account? <a href="./login.html">Login</a></p>
 		</div>
 		<script src="../public/sign-in.js"></script>
 	</body>
