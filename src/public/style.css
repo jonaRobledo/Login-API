@@ -75,3 +75,25 @@ form p {
 	width: 300px;
 	margin: 0 auto;
 }
+
+#alert-msg {
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: 1.1em;
+	padding: 0.6em 0.4em;
+	display: none;
+}
+
+#alert-msg[data-success] {
+	border: 1.5px solid #52ca50;
+	border-radius: 8px;
+	background: #52ca503a;
+	display: block;
+}
+
+#alert-msg[data-error] {
+	border: 1.5px solid #e14c4c;
+	border-radius: 8px;
+	background: #e14c4c5e;
+	display: block;
+}

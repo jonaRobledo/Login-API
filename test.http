@@ -1,6 +1,19 @@
+### User already exists
 POST http://localhost:3000/api/sign-in
 Content-Type: application/json
 
 {
-    "user": "username"
+    "user": "jona",
+    "email": "jona@jona.com",
+    "password": "jona007"
+}
+
+### New User registration
+POST http://localhost:3000/api/sign-in
+Content-Type: application/json
+
+{
+    "user": "macu",
+    "email": "macu@jona.com",
+    "password": "macu007"
 }
