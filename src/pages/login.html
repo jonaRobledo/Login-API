@@ -19,24 +19,22 @@
 			<p>Enter your credentials to access the administration area</p>
 			<hr />
 			<form id="login-form">
-				<div>
-					<label for="user">User</label
-					><input
-						type="text"
-						name="user"
-						id="user"
-						placeholder="username.123"
-					/>
-				</div>
-				<div>
-					<label for="password">Password</label
-					><input
-						type="password"
-						name="password"
-						id="password"
-						placeholder="*********"
-					/>
-				</div>
+				<label for="user">User</label
+				><input
+					type="text"
+					name="user"
+					id="user"
+					placeholder="username.123"
+				/>
+
+				<label for="password">Password</label
+				><input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="*********"
+				/>
+
 				<div class="div-flex">
 					<div>
 						<p>
@@ -45,7 +43,7 @@
 						</p>
 						<p>
 							You do not have an account?
-							<a href="./sign-in.html">Sign in</a>
+							<a href="/sign-in">Sign in</a>
 						</p>
 					</div>
 					<button
@@ -56,6 +54,13 @@
 					</button>
 				</div>
 			</form>
+			<div id="alert-msg">
+				<span class="alert-text"></span>
+				<a
+					href=""
+					class="alert-link"
+				></a>
+			</div>
 		</div>
 		<script src="../public/login.js"></script>
 	</body>

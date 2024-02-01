@@ -68,6 +68,7 @@ form p {
 .btn:hover {
 	background-color: #cfd4d9;
 	color: #14232d;
+	cursor: pointer;
 	transform: scale(1.1);
 }
 

@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const users = [
+export const users = [
 	{
 		user: 'jona',
 		email: 'jona@jona.com',
@@ -83,6 +83,10 @@ async function login(req, res) {
 	}
 
 	res.cookie('jwt', token, cookieOption)
-	res.status(200).json({ status: 'ok', msg: 'User logged' })
+	res.status(200).json({
+		status: 'ok',
+		msg: 'User logged',
+		redirect: '/admin'
+	})
 }
 export { register, login }
