@@ -6,11 +6,10 @@ import cors from 'cors'
 
 // Imports your Modules
 import routerAuth from './routes/authentication.js'
-import { register } from './controllers/auth.controller.js'
+import { register, login } from './controllers/auth.controller.js'
 
 // Generate the '__dirname' path relative
 import { fileURLToPath } from 'url'
-import { url } from 'inspector'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
@@ -30,6 +29,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 // Server Routes
 // app.use('/api', routerAuth)
 app.post('/api/sign-in', register)
+app.post('/api/login', login)
 
 // Launch the Server
 app.listen(app.get('port'))
