@@ -4,11 +4,11 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const trasnporter = nodemailer.createTransporter({
-	host: '',
-	port: '',
-	secure: '',
+	host: 'smtp.gmail.com', // Varia segun el servicio de correo seleccionado
+	port: '465',
+	secure: 'true',
 	auth: {
-		user: '',
-		pass: ''
+		user: 'correo@correo.com',
+		pass: 'password' // Contraseña generada por Google Account
 	}
 })
