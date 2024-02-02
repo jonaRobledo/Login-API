@@ -10,7 +10,7 @@ function userLogged(req, res, next) {
 }
 
 function publicAccess(req, res, next) {
-	// return !validateUser(req.headers.cookie) ? next() : res.redirect('/admin')
+	return validateUser(req.headers.cookie) ? res.redirect('/admin') : next()
 }
 
 function validateUser(cookie) {

@@ -40,6 +40,8 @@ async function register(req, res) {
 	const salt = await bcryptjs.genSalt(5)
 	const hashPassword = await bcryptjs.hash(password, salt)
 
+	// Send verification email to client
+
 	users.push({
 		user,
 		email,
@@ -78,6 +80,7 @@ async function login(req, res) {
 	})
 
 	const cookieOption = {
+		// httpOnly: true, // Evita que sea visible desde el navegador
 		expires: new Date(Date.now() + 3600 * 24 * 60 * 1000),
 		path: '/'
 	}
@@ -89,4 +92,27 @@ async function login(req, res) {
 		redirect: '/admin'
 	})
 }
-export { register, login }
+
+async function userData(req, res) {
+	const { cookie } = req.headers
+	if (!cookie) return false
+	const cookieJWT = cookie
+		.split(' ')
+		.find((cookie) => cookie.startsWith('jwt='))
+		.slice(4)
+
+	const searchedUser = jwt.verify(cookieJWT, process.env.SECRET_KEY)
+
+	const userFind = users.find((user) => user.user === searchedUser.user)
+
+	res.status(200).json({
+		status: 'ok',
+		msg: 'User found',
+		userResponse: {
+			user: userFind.user,
+			email: userFind.email
+		}
+	})
+}
+
+export { register, login, userData }

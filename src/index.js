@@ -5,8 +5,8 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 
 // Imports your Modules
-import routerAuth from './routes/authentication.js'
-import { register, login } from './controllers/auth.controller.js'
+// import routerAuth from './routes/authentication.js'
+import { register, login, userData } from './controllers/auth.controller.js'
 import { publicAccess, userLogged } from './middlewares/authorization.js'
 
 // Generate the '__dirname' path relative
@@ -29,13 +29,13 @@ app.use(cookieParser())
 app.use('/public', express.static(path.join(__dirname, 'public')))
 
 // Server Routes
-app.get('/', (req, res) => {
+app.get('/', publicAccess, (req, res) => {
 	res.sendFile(path.join(__dirname, '/pages/index.html'))
 })
-app.get('/login', (req, res) => {
+app.get('/login', publicAccess, (req, res) => {
 	res.sendFile(path.join(__dirname, '/pages/login.html'))
 })
-app.get('/sign-in', (req, res) => {
+app.get('/sign-in', publicAccess, (req, res) => {
 	res.sendFile(path.join(__dirname, '/pages/sign-in.html'))
 })
 app.get('/admin', userLogged, (req, res) => {
@@ -45,6 +45,7 @@ app.get('/admin', userLogged, (req, res) => {
 // app.use('/api', routerAuth)
 app.post('/api/sign-in', register)
 app.post('/api/login', login)
+app.get('/api/users', userLogged, userData)
 
 // Launch the Server
 app.listen(app.get('port'))
